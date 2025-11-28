@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHYIEN CREATIONS</title>
+
+    <!-- Smooth scrolling -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container nav">
+        <h1 class="logo">PHYIEN CREATIONS</h1>
+
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav>
+            <a href="#collection">Collection</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+
+<section class="hero">
+    <div class="video-grid">
+        <video autoplay muted loop playsinline>
+            <source src="video1.mp4" type="video/mp4">
+        </video>
+
+        <video autoplay muted loop playsinline>
+            <source src="video1.mp4" type="video/mp4">
+        </video>
+
+        <video autoplay muted loop playsinline>
+            <source src="video1.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="hero-content">
+        <h2>Timeless. Elegant. Vintage.</h2>
+        <p>Classic fashion pieces crafted with style and comfort.</p>
+        <a href="#collection" class="btn">Shop Collection</a>
+    </div>
+</section>
+
+
+
+<section id="collection" class="section collection">
+    <div class="container">
+        <h3>Our Collection</h3>
+
+        <div class="grid">
+
+            <div class="item">
+                <div class="img-box">
+                    <img src="pic1.jfif" alt="African top">
+                </div>
+                <h4>African top</h4>
+                <p>KES 1500</p>
+            </div>
+
+            <div class="item">
+                <div class="img-box">
+                    <img src="pic2.jfif" alt="African topper">
+                </div>
+                <h4>African topper</h4>
+                <p>KES 1500</p>
+            </div>
+
+            <div class="item">
+                <div class="img-box">
+                    <img src="pic3.jfif" alt="cute">
+                </div>
+                <h4>cute</h4>
+                <p>KES 2000</p>
+            </div>
+
+            <div class="item">
+                <div class="img-box">
+                    <img src="pic4.jfif" alt="Kitenge dress">
+                </div>
+                <h4>Kitenge dress</h4>
+                <p>KES 2500</p>
+            </div>
+
+            <div class="item">
+                <div class="img-box">
+                    <img src="pic5.jfif" alt="Africa top">
+                </div>
+                <h4>Africa top</h4>
+                <p>KES 1,500</p>
+            </div>
+
+            <div class="item">
+                <div class="img-box">
+                    <img src="pic6.jfif" alt="Dress">
+                </div>
+                <h4> Dress</h4>
+                <p>KES 2,300</p>
+            </div>
+
+            <div class="item">
+                <div class="img-box">
+                    <img src="pic7.jfif" alt="Top">
+                </div>
+                <h4>Top</h4>
+                <p>1500</p>
+            </div>
+
+            <div class="item">
+                <div class="img-box">
+                    <img src="pic8.jfif" alt="Vintage Top">
+                </div>
+                <h4>Vintage Top</h4>
+                <p>KES 1,600</p>
+            </div>
+
+            <div class="item">
+                <div class="img-box">
+                    <img src="pic9.jfif" alt="Top">
+                </div>
+                <h4>Top</h4>
+                <p>KES 1,800</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section id="about" class="section about">
+    <div class="container">
+        <h3>About Phyien Creations</h3>
+        <p>
+            Phyien Creations brings you warm, classic, stylish outfits inspired by
+            timeless vintage aesthetics. We believe in comfort, elegance and the
+            beauty of simplicity.
+        </p>
+    </div>
+</section>
+
+<section id="contact" class="section contact">
+    <div class="container">
+        <h3>Get In Touch</h3>
+
+        <div class="contact-box">
+            <p>
+                <strong>WhatsApp:</strong>
+                <a href="https://wa.me/254707211592" target="_blank" class="whatsapp-btn">
+                    Chat with us
+                </a>
+            </p>
+            <p>
+                <strong>Instagram:</strong> 
+                <a href="https://www.instagram.com/phyien_24" target="_blank" style="color:#FFD700; text-decoration:none;">
+                    @phyien_24
+                </a>
+            </p>
+            <p><strong>Location:</strong> Kenya</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Phyien Creations. All Rights Reserved.</p>
+</footer>
+
+<!-- Product Modal -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-img"></div>
+        <h4 class="modal-title"></h4>
+        <p class="modal-price"></p>
+        <p class="modal-description"></p>
+        <a href="#" target="_blank" class="btn buy-btn">Buy Now</a>
+    </div>
+</div>
+
+<!-- Script for product popups and future interactions -->
+<script src="script.js"></script>
+
+</body>
+</html>
