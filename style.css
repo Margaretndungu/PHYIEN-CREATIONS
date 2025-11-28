@@ -355,27 +355,34 @@ footer {
     height: 3px;
     background-color: #FFD700; /* gold */
 }
+.hamburger.hide {
+    display: none !important;
+}
 
-/* Mobile styles */
+/* MOBILE NAVIGATION FIXED */
 @media screen and (max-width: 768px) {
-    nav {
+
+    /* hide the menu by default */
+    .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: #000; /* black background */
+        background-color: #000;
         padding: 10px 0;
     }
 
-    nav a {
+    .nav-links a {
         padding: 10px 20px;
         color: #FFD700;
     }
 
+    /* show hamburger on mobile */
     .hamburger {
         display: flex;
     }
 
-    nav.active {
+    /* show menu when active */
+    .nav-links.active {
         display: flex;
     }
 }

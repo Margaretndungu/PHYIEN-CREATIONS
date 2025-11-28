@@ -59,11 +59,11 @@ window.addEventListener("click", (event) => {
 
 // ------------------- Hamburger Menu -------------------
 
-// Select hamburger and nav
-const hamburger = document.querySelector(".hamburger");
-const nav = document.querySelector("header nav");
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 
-// Toggle nav on hamburger click
-hamburger.addEventListener("click", () => {
-    nav.classList.toggle("active");
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active'); 
+    hamburger.classList.toggle('hide'); 
 });
+
