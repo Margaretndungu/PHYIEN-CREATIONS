@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phyien Creations Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Admin Dashboard</h2>
+        <nav>
+            <a href="#products">Products</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Products Section -->
+        <section id="products">
+            <h3>Products</h3>
+            <button id="addProductBtn">Add Product</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="productTableBody">
+                    {% for product in products %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price }}</td>
+                        <td><img src="{{ product.image }}" width="60"></td>
+                        <td>
+                            <button class="edit-btn" onclick="editProduct({{ loop.index0 }})">Edit</button>
+                            <button class="delete-btn" onclick="deleteProduct({{ loop.index0 }})">Delete</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Modal for Add/Edit Product -->
+    <div id="productModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span id="closeModal" style="float:right;cursor:pointer;">&times;</span>
+            <h3 id="modalTitle">Add Product</h3>
+            <form id="productForm" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="Product Name" required><br><br>
+                <input type="text" name="price" placeholder="Product Price" required><br><br>
+                <input type="file" name="image" accept="image/*"><br><br>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body class="login-page">
+
+<div class="login-box">
+    <h2>Admin Login</h2>
+
+    <form method="POST">
+        <div class="password-box">
+            <input id="password" type="password" name="password" placeholder="Enter password" required>
+            <span class="eye-icon" onclick="togglePassword()">👁️</span>
+        </div>
+
+        <button type="submit">Login</button>
+    </form>
+
+    {% if error %}
+        <p class="error-msg">{{ error }}</p>
+    {% endif %}
+</div>
+
+<script>
+function togglePassword() {
+    const pwd = document.getElementById("password");
+    pwd.type = pwd.type === "password" ? "text" : "password";
+}
+</script>
+</body>
+</html>

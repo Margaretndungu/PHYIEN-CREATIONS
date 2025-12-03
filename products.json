@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Ankara top",
+        "price": "KES 1500",
+        "image": "static/images/pic1.jfif"
+    },
+    {
+        "name": "Ankara top",
+        "price": "KES 1500",
+        "image": "static/images/pic2.jfif"
+    },
+    {
+        "name": "Ankara set",
+        "price": "KES 2000",
+        "image": "static/images/pic3.jfif"
+    },
+    {
+        "name": "Ankara dress",
+        "price": "KES 3500",
+        "image": "static/images/pic4.jfif"
+    },
+    {
+        "name": "Ankara top",
+        "price": "KES 1500",
+        "image": "static/images/pic5.jfif"
+    },
+    {
+        "name": "Ankara dress",
+        "price": "KES 3500",
+        "image": "static/images/pic6.jfif"
+    },
+    {
+        "name": "Ankara top",
+        "price": "KES 1500",
+        "image": "static/images/pic7.jfif"
+    },
+    {
+        "name": "Ankara top",
+        "price": "KES 1500",
+        "image": "static/images/pic8.jfif"
+    },
+    {
+        "name": "Corset top",
+        "price": "KES 2500",
+        "image": "static/images/pic9.jfif"
+    }
+]

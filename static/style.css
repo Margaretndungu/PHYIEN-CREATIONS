@@ -386,3 +386,13 @@ footer {
         display: flex;
     }
 }
+/* Social links: Instagram & TikTok */
+.social-link {
+    color: #FFD700;           /* default gold color */
+    text-decoration: none;    /* remove underline */
+    transition: 0.3s;
+}
+
+.social-link:hover {
+    color: #1DA1F2;           /* blue on hover */
+}
