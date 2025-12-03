@@ -6,36 +6,21 @@
     <title>PHYIEN CREATIONS</title>
 
     <!-- Enable smooth scrolling across the site -->
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Reusable style for social links */
-        .social-link {
-            color: #FFD700;
-            text-decoration: none;
-        }
-    </style>
-
-    <!-- Main stylesheet -->
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <!-- ================= HEADER ================= -->
 <header>
     <div class="container nav">
-        <!-- Brand/Logo -->
         <div class="logo">Phyien Creations</div>
 
-        <!-- Hamburger icon for mobile menu -->
         <div class="hamburger">
             <div></div>
             <div></div>
             <div></div>
         </div>
 
-        <!-- Navigation links -->
         <nav class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -48,19 +33,17 @@
 <!-- ================= HERO SECTION ================= -->
 <section class="hero" id="home">
     <div class="video-grid">
-        <!-- Background video tiles -->
         <video autoplay muted loop playsinline>
-            <source src="static/images/video1.mp4" type="video/mp4">
+            <source src="{{ url_for('static', filename='images/video1.mp4') }}" type="video/mp4">
         </video>
         <video autoplay muted loop playsinline>
-            <source src="static/images/video1.mp4" type="video/mp4">
+            <source src="{{ url_for('static', filename='images/video1.mp4') }}" type="video/mp4">
         </video>
         <video autoplay muted loop playsinline>
-            <source src="static/images/video1.mp4" type="video/mp4">
+            <source src="{{ url_for('static', filename='images/video1.mp4') }}" type="video/mp4">
         </video>
     </div>
 
-    <!-- Text content overlaying the hero section -->
     <div class="hero-content">
         <h2>Timeless. Elegant. Vintage.</h2>
         <p>Classic fashion pieces crafted with style and comfort.</p>
@@ -92,7 +75,6 @@
     <div class="container">
         <h3>About Phyien Creations</h3>
         <p>
-            <!-- Business description -->
             Phyien Creations brings you warm, classic, stylish outfits inspired by
             timeless vintage aesthetics. We believe in comfort, elegance, and the
             beauty of simplicity.
@@ -104,33 +86,25 @@
 <section id="contact" class="section contact">
     <div class="container">
         <h3>Get In Touch</h3>
-
         <div class="contact-box">
-            <!-- WhatsApp contact -->
             <p>
                 <strong>WhatsApp:</strong>
                 <a href="https://wa.me/254707211592" target="_blank" class="whatsapp-btn">
                     Chat with us
                 </a>
             </p>
-
-            <!-- Instagram profile link -->
             <p>
                 <strong>Instagram:</strong>
                 <a href="https://www.instagram.com/phyiencreations" target="_blank" class="social-link">
                     @phyiencreations
                 </a>
             </p>
-
-            <!-- TikTok profile link -->
             <p>
                 <strong>TikTok:</strong>
                 <a href="https://www.tiktok.com/@phyiencreation" target="_blank" class="social-link">
                     @phyiencreation
                 </a>
             </p>
-
-            <!-- Business location -->
             <p><strong>Location:</strong> Kenya</p>
         </div>
     </div>
@@ -141,26 +115,24 @@
     <p>© 2025 Phyien Creations. All Rights Reserved.</p>
 </footer>
 
-<!-- ================= PRODUCT MODAL (POPUP) ================= -->
-<!-- This modal appears when a product is clicked -->
+<!-- ================= PRODUCT MODAL ================= -->
 <div id="productModal" class="modal">
     <div class="modal-content">
-        <!-- Close button -->
         <span class="close">&times;</span>
-
-        <!-- Dynamic content filled by script.js -->
         <div class="modal-img"></div>
         <h4 class="modal-title"></h4>
         <p class="modal-price"></p>
         <p class="modal-description"></p>
-
-        <!-- Link to purchase or contact -->
         <a href="#" target="_blank" class="btn buy-btn">Buy Now</a>
     </div>
 </div>
 
-<!-- JavaScript for interactions and modal functionality -->
-<script src="static/script.js"></script>
+<!-- ================= PRODUCTS DATA FOR JS ================= -->
+<script>
+const products = {{ products | tojson }};
+const phoneNumber = "254707211592"; // WhatsApp number
+</script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 </html>

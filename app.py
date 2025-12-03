@@ -1,16 +1,18 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for, session
+from datetime import timedelta
 import json, os
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key_here"  # Replace with a strong secret key
+app.secret_key = "your_secret_key_here"  # Replace with a strong secret key 
 
 ADMIN_PASSWORD = "phyien2001"
-DATA_FILE = "products.json"
+DATA_FILE = os.path.join("static", "products.json")
 UPLOAD_FOLDER = "static/images"
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "jfif", "gif"}
 
-app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+app.config["SESSION_PERMANENT"] = True
+app.permanent_session_lifetime = timedelta(minutes=5)
 
 # ---------------- Helper functions ----------------
 def allowed_file(filename):
