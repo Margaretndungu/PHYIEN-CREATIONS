@@ -9,7 +9,9 @@ async function loadProducts() {
         row.innerHTML = `
             <td>${product.name}</td>
             <td>${product.price}</td>
-            <td><img src="${product.image}" width="60"></td>
+            <td>
+                <img src="${product.image}" width="60" style="cursor:pointer;" onclick='viewProduct(${JSON.stringify(product)})'>
+            </td>
             <td>
                 <button class="edit-btn" onclick="editProduct(${index})">Edit</button>
                 <button class="delete-btn" onclick="deleteProduct(${index})">Delete</button>
@@ -77,6 +79,20 @@ document.getElementById("closeModal").addEventListener("click", () => {
 
 // ------------------- Add button -------------------
 document.getElementById("addProductBtn").addEventListener("click", addProduct);
+
+// ------------------- NEW: View Product Modal -------------------
+function viewProduct(product) {
+    const modal = document.getElementById("viewProductModal");
+    document.getElementById("viewProductImage").src = product.image;
+    document.getElementById("viewProductName").innerText = product.name;
+    document.getElementById("viewProductPrice").innerText = product.price;
+    modal.style.display = "block";
+}
+
+// Close view modal
+document.getElementById("closeViewModal").addEventListener("click", () => {
+    document.getElementById("viewProductModal").style.display = "none";
+});
 
 // ------------------- Load products on page load -------------------
 loadProducts();

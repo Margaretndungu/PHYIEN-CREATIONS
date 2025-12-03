@@ -61,6 +61,15 @@
             </form>
         </div>
     </div>
+	<!-- Product View Modal -->
+<div id="viewProductModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span id="closeViewModal" style="float:right;cursor:pointer;">&times;</span>
+        <img id="viewProductImage" src="" width="300">
+        <h3 id="viewProductName"></h3>
+        <p id="viewProductPrice"></p>
+    </div>
+</div>
 
     <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
 </body>

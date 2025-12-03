@@ -6,13 +6,15 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 app.secret_key = "your_secret_key_here"  # Replace with a strong secret key 
 
+app.config["SESSION_PERMANENT"] = True
+app.permanent_session_lifetime = timedelta(minutes=5)
+
 ADMIN_PASSWORD = "phyien2001"
 DATA_FILE = os.path.join("static", "products.json")
 UPLOAD_FOLDER = "static/images"
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "jfif", "gif"}
 
-app.config["SESSION_PERMANENT"] = True
-app.permanent_session_lifetime = timedelta(minutes=5)
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 # ---------------- Helper functions ----------------
 def allowed_file(filename):
@@ -82,7 +84,7 @@ def add_product():
     data = {
         "name": name,
         "price": price,
-        "image": f"static/images/{filename}"
+        "image": f"/static/images/{filename}"
     }
 
     products = load_products()
@@ -107,7 +109,7 @@ def update_product(index):
         filename = secure_filename(file.filename)
         filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
         file.save(filepath)
-        product["image"] = f"static/images/{filename}"
+        product["image"] = f"/static/images/{filename}"
 
     product["name"] = name
     product["price"] = price
